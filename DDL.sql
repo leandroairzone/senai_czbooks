@@ -11,6 +11,8 @@ CREATE TABLE Categoria
 
 );
 
+GO
+
 CREATE TABLE TipoUsuario
 
 (
@@ -19,6 +21,8 @@ CREATE TABLE TipoUsuario
 		,  Tipo        VARCHAR (200) NOT NULL
 );
 
+GO
+
 CREATE TABLE lojaLivro 
 
 (
@@ -26,10 +30,12 @@ CREATE TABLE lojaLivro
 
 		, Nome	    VARCHAR(200) NOT NULL
 		, Telefone	VARCHAR(100) NOT NULL
-		, Endereço	VARCHAR(150) NOT NULL
+		, Endereco	VARCHAR(150) NOT NULL
 
 
 );
+
+GO
 
 CREATE TABLE Usuario 
 
@@ -42,6 +48,8 @@ CREATE TABLE Usuario
 
 );
 
+GO
+
 CREATE TABLE Autor 
 
 (
@@ -53,17 +61,21 @@ CREATE TABLE Autor
 
 );
 
+GO
+
 CREATE TABLE livro 
 
 (
 	 idLivro INT PRIMARY KEY IDENTITY 
 	
 	, Titulo	  VARCHAR(200) NOT NULL
-	, Descriçao	  VARCHAR(200) NOT NULL
+	, Descricao	  VARCHAR(200) NOT NULL
 	, Ano	      DATE 
-	, Preço	      DECIMAL(18,2) NOT NULL
+	, Preco	      DECIMAL(18,2) NOT NULL
 	, idAutor     INT FOREIGN KEY REFERENCES Autor (idAutor) 	  
     , idCategoria INT FOREIGN KEY REFERENCES Categoria (idCategoria) 
 	, idLojaLivro INT FOREIGN KEY REFERENCES lojaLivro (idlojalivro) 
 
 );
+
+GO
